@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="br.ufc.dspm.urgent.MainActivity"
+    android:background="#FF6347">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="200dp">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/noticias" />
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btnHospitais"
+        android:layout_width="match_parent"
+        android:layout_marginTop="30dp"
+        android:layout_height="wrap_content"
+        android:text="Hospitais" />
+
+    <Button
+        android:id="@+id/btnPostosDeSaude"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Postos de saúde" />
+
+    <Button
+        android:id="@+id/btnUpas"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="UPAS" />
+
+    <Button
+        android:id="@+id/btnSamu"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="CHAMAR SAMU"
+        android:onClick="chamarSamu" />
+
+</LinearLayout>
