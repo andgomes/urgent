@@ -2,6 +2,9 @@ package br.ufc.dspm.urgent;
 
 import android.content.Context;
 import android.content.pm.PackageManager;
+import android.content.res.Resources;
+import android.graphics.Bitmap;
+import android.graphics.drawable.BitmapDrawable;
 import android.location.Location;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -18,6 +21,7 @@ import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
+import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 
@@ -60,8 +64,15 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
             latlngs[j] = new LatLng(localizacoes[i], localizacoes[i + 1]);
         }
 
+        BitmapDrawable bitmapdraw = (BitmapDrawable) getResources().getDrawable(R.drawable.crossmarker);
+        Bitmap b = bitmapdraw.getBitmap();
+        Bitmap smallMarker = Bitmap.createScaledBitmap(b, 65, 80, false);
+
         for (int i = 0; i < latlngs.length; i++) {
-            mMap.addMarker(new MarkerOptions().position(latlngs[i]));
+
+            mMap.addMarker(new MarkerOptions().position(latlngs[i]).
+                    icon(BitmapDescriptorFactory.fromBitmap(smallMarker)));
+
         }
 
     }
