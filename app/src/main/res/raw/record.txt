@@ -1,0 +1,104 @@
+
+[{ "regional":"Regional 1","nome":"1. Floresta","endereco":"Rua Tenente José Barreira, 251","bairro":"Álvaro Weyne","telefone":"null"}
+,{ "regional":"Regional 1","nome":"2. Fernando Façanha","endereco":"Rua Rio Tocantins, s/n","bairro":"Jardim Iracema","telefone":"null"}
+,{ "regional":"Regional 1","nome":"3. Carlos Ribeiro","endereco":"Rua Jacinto Matos, 944 - Jacarecanga","bairro":"null","telefone":"null"}
+,{ "regional":"Regional 1","nome":"4. Dr. Paulo de Melo Machado","endereco":"Rua Bernardo Porto, 497","bairro":"Monte Castelo","telefone":"null"}
+,{ "regional":"Regional 1","nome":"5. Guiomar Arruda","endereco":"Rua Gal Costa Matos, 06","bairro":"Pirambu","telefone":"null"}
+,{ "regional":"Regional 1","nome":"6. Lineu Jucá","endereco":"Rua Vila Velha, 101","bairro":"Barra do Ceará","telefone":"null"}
+,{ "regional":"Regional 1","nome":"7. Casemiro José de Lima Filho","endereco":"Av. Francisco Sá, 6449","bairro":"Barra do Ceará","telefone":"null"}
+,{ "regional":"Regional 1","nome":"8. Virgílio Távora -  Av. Monsenhor Hélio Campos, s/n","endereco":"null","bairro":"null","telefone":"null"}
+,{ "regional":"Regional 1","nome":"9. Prof. José Rebouças Macambira","endereco":"Rua Creuza Rocha, s/n","bairro":"Jardim Guanabara","telefone":"null"}
+,{ "regional":"Regional 1","nome":"10. João Medeiros de Lima","endereco":"Av. Dom Aloísio Lorscheider, 982","bairro":"Vila Velha","telefone":"null"}
+,{ "regional":"Regional 1","nome":"11. Francisco Domingos da Silva","endereco":"Av. Castelo Branco, 4707","bairro":"Barra do Ceará","telefone":"null"}
+,{ "regional":"Regional 1","nome":"12.  4 Varas","endereco":"Rua Profeta Isaías, 456","bairro":"Pirambu","telefone":"null"}
+,{ "regional":"Regional 1","nome":"13. Airton Monte","endereco":"Rua Alberto de Oliveira, s/n","bairro":"null","telefone":"null"}
+,{ "regional":"Regional 2","nome":"1. Odorico de Morais","endereco":"Rua São Bernardo do Campo, s/n","bairro":"Castelo Encantado","telefone":"null"}
+,{ "regional":"Regional 2","nome":"2. Benedito Arthur de Carvalho","endereco":"Rua Jaime Leonel, 228","bairro":"Luciano Cavalcante","telefone":"null"}
+,{ "regional":"Regional 2","nome":"3. Paulo Marcelo","endereco":"Rua 25 de Março, 607","bairro":"Centro","telefone":"null"}
+,{ "regional":"Regional 2","nome":"4. Miriam Porto Mota","endereco":"Rua Coronel Jucá, 1636","bairro":"Dionísio Torres","telefone":"null"}
+,{ "regional":"Regional 2","nome":"5. Frei Tito de Alencar Lima","endereco":"Rua José Cláudio Costa Lima, 100","bairro":"Caça e Pesca","telefone":"null"}
+,{ "regional":"Regional 2","nome":"6. Irmã Hercília Lima Aragão","endereco":"Rua Frei Vidal, 1821- São João do Tauape","bairro":"null","telefone":"null"}
+,{ "regional":"Regional 2","nome":"7. Rigoberto Romero","endereco":"Rua Alameda das Graviolas, 195","bairro":"Cidade 2000","telefone":"null"}
+,{ "regional":"Regional 2","nome":"8. Pio XII","endereco":"Rua Belizario Távora, s/n","bairro":"Pio XII","telefone":"null"}
+,{ "regional":"Regional 2","nome":"9. Flávio Marcílio","endereco":"Avenida Abolição, 4180","bairro":"Mucuripe","telefone":"null"}
+,{ "regional":"Regional 2","nome":"10. Dr. Célio Brasil Girão","endereco":"Rua Professor Henrique Firmesa, 82","bairro":"Cais do Porto","telefone":"null"}
+,{ "regional":"Regional 2","nome":"11. Aída Santos e Silva - Rua Trajano de Medeiro, 813","endereco":"null","bairro":"null","telefone":"null"}
+,{ "regional":"Regional 2","nome":"12. Sandra Maria Faustino Nogueira","endereco":"Rua Josias Paula de Sousa, s/n","bairro":"null","telefone":"null"}
+,{ "regional":"Regional 3","nome":"1. Meton de Alencar","endereco":"Rua Perdigão Sampaio, 820","bairro":"Antônio Bezerra","telefone":"null"}
+,{ "regional":"Regional 3","nome":"2. Prof. Clodoaldo Pinto","endereco":"Rua Bonward Bezerra, 100","bairro":"Padre Andrade","telefone":"null"}
+,{ "regional":"Regional 3","nome":"3. Eliézer Studart","endereco":"Rua Tomaz Cavalcante, 545","bairro":"Autran Nunes","telefone":"null"}
+,{ "regional":"Regional 3","nome":"4. Fernandes Távora","endereco":"Rua Maceió, 1354","bairro":"Henrique Jorge","telefone":"null"}
+,{ "regional":"Regional 3","nome":"5. Prof. Luiz Recamonde Capelo","endereco":"Rua Maria Quintela, 935","bairro":"Bom Sucesso","telefone":"null"}
+,{ "regional":"Regional 3","nome":"6. César Cals de Oliveira Filho","endereco":"Rua Cel. Matos Dourado, s/n","bairro":"Pici","telefone":"null"}
+,{ "regional":"Regional 3","nome":"7. João XXIII","endereco":"Rua Júlio Braga, s/n","bairro":"João XXIII","telefone":"null"}
+,{ "regional":"Regional 3","nome":"8. Francisco Pereira de Almeida","endereco":"Rua Paraguai, s/n","bairro":"Bela Vista","telefone":"null"}
+,{ "regional":"Regional 3","nome":"9. Waldemar Alcântara","endereco":"Rua Silveira Filho, 903","bairro":"Jockey Clube","telefone":"null"}
+,{ "regional":"Regional 3","nome":"10. Prof. José Sobreira Amorim","endereco":"Av. Des. Luis Paulino, 190","bairro":"Henrique Jorge","telefone":"null"}
+,{ "regional":"Regional 3","nome":"11. Santa Liduína","endereco":"Rua Prof. João Bosco, 213","bairro":"Parque Araxá","telefone":"null"}
+,{ "regional":"Regional 3","nome":"12. Humberto Bezerra -  Rua Hugo Victor, 51","endereco":"Antônio Bezerra","bairro":"null","telefone":"null"}
+,{ "regional":"Regional 3","nome":"13. George Benevides","endereco":"Rua Pio Saraiva, 168","bairro":"Quintino Cunha","telefone":"null"}
+,{ "regional":"Regional 3","nome":"14. Ivana de Sousa Paes -  Rua Virgílio Brígido, s/n","endereco":"Presidente Kennedy","bairro":"null","telefone":"null"}
+,{ "regional":"Regional 3","nome":"15. Hermínia Leitão Lima - Rua Gen. João Couto, 470","endereco":"Quintino Cunha","bairro":"null","telefone":"null"}
+,{ "regional":"Regional 3","nome":"16. Anastácio Magalhães - Rua Delmiro de Farias, 1679","endereco":"Rodolfo Teófilo","bairro":"null","telefone":"null"}
+,{ "regional":"Regional 4","nome":"1. Turbay Barreira","endereco":"Rua Gonçalo Souto, 420","bairro":"Vila União","telefone":"null"}
+,{ "regional":"Regional 4","nome":"2. Abel Pinto","endereco":"Travessa Goiás, s/n","bairro":"Demócrito Rocha","telefone":"null"}
+,{ "regional":"Regional 4","nome":"3. Luís Albuquerque Mendes","endereco":"Rua Benjamin Franklin, 735","bairro":"Serrinha","telefone":"null"}
+,{ "regional":"Regional 4","nome":"4. Dom Aloísio Lorscheider -  Rua Betel, 1895","endereco":"Itaperi","bairro":"null","telefone":"null"}
+,{ "regional":"Regional 4","nome":"5. Gutemberg Braun","endereco":" Rua Monsenhor Agostinho, 505","bairro":"Vila Pery","telefone":"null"}
+,{ "regional":"Regional 4","nome":"6. Oliveira Pombo","endereco":"Travessa Rex, s/n","bairro":"Pan Americano","telefone":"null"}
+,{ "regional":"Regional 4","nome":"7. Gothardo Peixoto Figueiredo Lima","endereco":"Rua Irmã Bazet, s/n","bairro":"null","telefone":"null"}
+,{ "regional":"Regional 4","nome":"8. Dr. Ocelo Pinheiro","endereco":"Rua Elcias Lopes, 517","bairro":"Itaóca","telefone":"null"}
+,{ "regional":"Regional 4","nome":"9. Dr. Roberto da Silva Bruno","endereco":"Av. Borges de Melo, 910","bairro":"Fátima","telefone":"null"}
+,{ "regional":"Regional 4","nome":"10. Prof. José Valdevino de Carvalho","endereco":"Rua Guará, s/n","bairro":"Itaóca","telefone":"null"}
+,{ "regional":"Regional 4","nome":"11. Dr. Luis Costa","endereco":"Rua Marechal Deodoro, 1501","bairro":"Benfica","telefone":"null"}
+,{ "regional":"Regional 4","nome":"12. Dr. Francisco Monteiro (Chico Passeata)","endereco":"Rua 7, s/n","bairro":"null","telefone":"null"}
+,{ "regional":"Regional 4","nome":"13. Parangaba","endereco":"Rua Germano Franklin, 495","bairro":"Parangaba","telefone":"null"}
+,{ "regional":"Regional 5","nome":"1. Guarany Mont´Alverne","endereco":"Rua Geraldo Barbosa, 3230","bairro":"Granja Lisboa","telefone":"null"}
+,{ "regional":"Regional 5","nome":"2. José Galba de Araújo","endereco":"Av. Senador Fernandes Távora, 3161","bairro":"Genibaú","telefone":"null"}
+,{ "regional":"Regional 5","nome":"3. Luiza Távora","endereco":"Travessa São José, 940","bairro":"Mondubim","telefone":"Conj. Itaperi"}
+,{ "regional":"Regional 5","nome":"4. João Elísio Holanda","endereco":"Rua Juvêncio Sales, s/n","bairro":"Aracapé","telefone":"null"}
+,{ "regional":"Regional 5","nome":"5. Dr. Abner Cavalcante Brasil","endereco":"Rua Eng. Luiz Montenegro, 485","bairro":"Siqueira","telefone":"null"}
+,{ "regional":"Regional 5","nome":"6. Luciano Torres de Melo","endereco":"Rua Delta, 365","bairro":"Vila Manoel Sátiro","telefone":"null"}
+,{ "regional":"Regional 5","nome":"7. Siqueira","endereco":"Rua Eng. Luis Montenegro, 485","bairro":"null","telefone":"null"}
+,{ "regional":"Regional 5","nome":"8. Maciel de Brito","endereco":"Av. A, s/n","bairro":"Conjunto Ceará","telefone":"1ª Etapa"}
+,{ "regional":"Regional 5","nome":"9. Parque São José","endereco":"Rua Desembargador Frota, s/n","bairro":"Parque São José","telefone":"null"}
+,{ "regional":"Regional 5","nome":"10. Fernando César Vieira Diógenes","endereco":"Rua Teodoro de Castro, s/n","bairro":"Granja Portugal","telefone":"null"}
+,{ "regional":"Regional 5","nome":"11. José Paracampos","endereco":"Rua Alfredo Mamede, 250","bairro":"Mondubim","telefone":"null"}
+,{ "regional":"Regional 5","nome":"12. Graciliano Muniz","endereco":"Rua 106, 345","bairro":"Conj. Esperança","telefone":"null"}
+,{ "regional":"Regional 5","nome":"13. Dom Antônio de Almeida Lustosa","endereco":"R. Cel. João Correia, s/n","bairro":"Granja Lisboa","telefone":"null"}
+,{ "regional":"Regional 5","nome":"14. Maria Viviane Benevides Gouveia","endereco":"Rua João Áreas, 1296","bairro":"Vila Manoel Sátiro","telefone":"null"}
+,{ "regional":"Regional 5","nome":"15. Argeu Herbster","endereco":"Rua Cel. João Correia, 728","bairro":"Bom Jardim","telefone":"null"}
+,{ "regional":"Regional 5","nome":"16. Edmilson Pinheiro","endereco":"Av. H, 2191","bairro":"Granja Lisboa","telefone":"null"}
+,{ "regional":"Regional 5","nome":"17. Pedro Celestino Romero","endereco":"Rua Gastão Justo, 215","bairro":"Maraponga","telefone":"null"}
+,{ "regional":"Regional 5","nome":"18. Dr. Jurandir Picanço","endereco":"Rua Duas Nações, s/n","bairro":"Granja Portugal","telefone":"null"}
+,{ "regional":"Regional 5","nome":"19. José Walter - Avenida L, 1880","endereco":"José Walter","bairro":"3ª Etapa","telefone":"null"}
+,{ "regional":"Regional 5","nome":"20. Zélia Correia ","endereco":"Rua Antônio Pereira, 1495","bairro":"Planalto Ayrton Sena","telefone":"null"}
+,{ "regional":"Regional 5","nome":"21. Ronaldo de Albuquerque Ribeiro","endereco":"Av. I, s/n","bairro":"null","telefone":"null"}
+,{ "regional":"Regional 6","nome":"1. Francisco Waldo Pessoa de Almeida","endereco":"Rua Capitão Hugo Bezerra, 75","bairro":"Barroso","telefone":"null"}
+,{ "regional":"Regional 6","nome":"2. Prof. Monteiro de Moraes","endereco":"Av. Evilásio Miranda, s/n","bairro":"Sapiranga Coité","telefone":"null"}
+,{ "regional":"Regional 6","nome":"3. Dr. Hélio Goes Ferreira","endereco":"Av. Eng. Leal Lima Verde, 453","bairro":"Conjunto Alvorada","telefone":"null"}
+,{ "regional":"Regional 6","nome":"4. Terezinha Parente","endereco":"Rua Nelson Coelho, 209","bairro":"Lagoa Redonda","telefone":"null"}
+,{ "regional":"Regional 6","nome":"5. José Barros de Alencar","endereco":"Rua José Nogueira de Alencar, s/n","bairro":"Pedras","telefone":"null"}
+,{ "regional":"Regional 6","nome":"6. Maria de Lourdes Jereissati","endereco":"Rua Reino Unido, 115","bairro":"Conj. Tancredo Neves","telefone":"null"}
+,{ "regional":"Regional 6","nome":"7. Francisco de Melo Jaborandi","endereco":"Rua 315, 180","bairro":"São Cristovão","telefone":"null"}
+,{ "regional":"Regional 6","nome":"8. Messejana","endereco":"Rua Cel. Guilherme Alencar, s/n , Messejana","bairro":"null","telefone":"null"}
+,{ "regional":"Regional 6","nome":"9. Prof. João Hipólito de Azevedo -  Rua Três, 88","endereco":"Dias Macedo","bairro":"Conjunto Napoleão Viana","telefone":"null"}
+,{ "regional":"Regional 6","nome":"10. Manoel Carlos Gouveia","endereco":"Av. Des. Faustino Albuquerque, 486","bairro":"Jardim das Oliveiras","telefone":"null"}
+,{ "regional":"Regional 6","nome":"11. Dr. Pedro Sampaio","endereco":"Av. Iracema, 1516","bairro":"Conjunto Palmeiras","telefone":"null"}
+,{ "regional":"Regional 6","nome":"12. Vicentina Campos","endereco":"Rua B, 145","bairro":"Parque Dois Irmãos","telefone":"Conjunto Jardim Primavera"}
+,{ "regional":"Regional 6","nome":"13. Alarico Leite","endereco":"Av. dos Paroaras, 301","bairro":"Passaré","telefone":"null"}
+,{ "regional":"Regional 6","nome":"14. Dr. Edmar Fujita","endereco":"Av. Alberto Craveiro, 1480","bairro":"Castelão","telefone":"null"}
+,{ "regional":"Regional 6","nome":"15. Janival de Almeida Vieira","endereco":"Rua Coelho Garcia, 25","bairro":"Castelão","telefone":"null"}
+,{ "regional":"Regional 6","nome":"16. Evandro Ayres de Moura","endereco":"Av. Castelo de Castro, s/n","bairro":"Jangurussu","telefone":"null"}
+,{ "regional":"Regional 6","nome":"17. Prof. Anísio Teixeira","endereco":"Rua Guarani, 355","bairro":"Paupina","telefone":"null"}
+,{ "regional":"Regional 6","nome":"18. Prof. Maurício Matos Dourado","endereco":"Rua Floriano Benevides, 391","bairro":"Edson Queiroz","telefone":"null"}
+,{ "regional":"Regional 6","nome":"19. César Cals de Oliveira","endereco":"Rua Capitão Aragão, 555","bairro":"Aerolândia","telefone":"null"}
+,{ "regional":"Regional 6","nome":"20. Galba Araújo","endereco":"Avenida Recreio, 1390","bairro":"Lagoa Redonda","telefone":"null"}
+,{ "regional":"Regional 6","nome":"21. Sítio São João","endereco":"Rua 5, 74","bairro":"Jangurussu","telefone":"Conj. Sítio São João"}
+,{ "regional":"Regional 6","nome":"22. Luis Franklin Pereira","endereco":"Rua Alexandre Vieira, s/n","bairro":"null","telefone":"null"}
+,{ "regional":"Regional 6","nome":"23. Maria Grasiela Teixeira Barroso","endereco":"Rua Babilônia, 250","bairro":"null","telefone":"null"}
+,{ "regional":"Regional 6","nome":"24. Edilmar Norões","endereco":"Rua K, s/n","bairro":"null","telefone":"null"}
+,{ "regional":"Regional 6","nome":"25. Dr. Pompeu Vasconcelos","endereco":"Rua 5, s/n","bairro":"null","telefone":"null"}
+,{ "regional":"Regional 6","nome":"26. Osmar Viana","endereco":"Rua Chiquinha Gonzaga, s/n","bairro":"null","telefone":"null"}
+,{ "regional":"Regional 6","nome":"27. Marcus Aurélio Rabelo Lima Verde -  Rua Iracema, 1110","endereco":"Jangurussu","bairro":"null","telefone":"null"}
+,{ "regional":"Regional 6","nome":"28. Dr. Otoni Cardoso do Vale","endereco":"Rua José Teixeira da Costa, s/n","bairro":"Paupina Acompanhe ","telefone":"0800.285.0880 Prefeitura Municipal de Fortaleza Rua São José, 01"}]

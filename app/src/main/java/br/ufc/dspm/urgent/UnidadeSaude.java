@@ -5,6 +5,9 @@ public abstract class UnidadeSaude {
     private double latitude;
     private double longitude;
 
+    public UnidadeSaude() {
+    }
+
     public UnidadeSaude(double latitude, double longitude) {
 
         this.latitude = latitude;
