@@ -8,6 +8,7 @@ import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
@@ -20,6 +21,8 @@ public class MainActivity extends AppCompatActivity {
     private Animation fade_in;
     private Animation fade_out;
 
+    private Localizador localizador;
+
     ViewFlipper viewFlipper;
 
     @Override
@@ -28,11 +31,14 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        localizador = new Localizador(this);
+
         campanhas();
 
     }
 
-    public void campanhas(){
+    public void campanhas() {
+
         viewFlipper = (ViewFlipper) findViewById(R.id.vfCampanhas);
 
         fade_in = AnimationUtils.loadAnimation(this, android.R.anim.fade_in);
@@ -63,7 +69,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void mapsUpa() {
 
-        List<UPA> upas = Localizador.localizacaoUpas();
+        List<UPA> upas = localizador.localizacaoUpas();
 
         double[] latlngs = new double[upas.size() * 2];
         Bundle bundle = new Bundle();

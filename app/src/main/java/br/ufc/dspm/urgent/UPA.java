@@ -1,23 +1,13 @@
 package br.ufc.dspm.urgent;
 
-public class UPA {
-
-    private double latitude;
-    private double longitude;
+public class UPA extends UnidadeSaude {
 
     public UPA(double lat, double lng) {
-
-        latitude = lat;
-        longitude = lng;
-
+        super(lat, lng);
     }
 
-    public double getLatitude() {
-        return latitude;
-    }
-
-    public double getLongitude() {
-        return longitude;
+    public String getTipo() {
+        return "upa";
     }
 
 }

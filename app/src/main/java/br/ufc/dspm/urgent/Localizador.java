@@ -1,18 +1,27 @@
 package br.ufc.dspm.urgent;
 
+import android.content.ContentValues;
+import android.content.Context;
+
 import java.util.LinkedList;
 import java.util.List;
 
 public class Localizador {
 
-    public static List<UPA> localizacaoUpas() {
+    private UnidadeSaudeDAO unidadeSaudeDAO;
 
-        List<UPA> upas = new LinkedList<>();
+    public Localizador(Context context) {
 
-        upas.add(new UPA(-3.755920, -38.593743));
-        upas.add(new UPA(-3.708786, -38.568718));
+        unidadeSaudeDAO = new UnidadeSaudeDAO(context);
 
-        return upas;
+        unidadeSaudeDAO.adicionarUnidadeSaude(new UPA(-3.755920, -38.593743));
+        unidadeSaudeDAO.adicionarUnidadeSaude(new UPA(-3.708786, -38.568718));
+
+    }
+
+    public List<UPA> localizacaoUpas() {
+
+        return unidadeSaudeDAO.listUpas();
 
     }
 
