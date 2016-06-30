@@ -107,6 +107,8 @@ public class MainActivity extends AppCompatActivity {
 
         List<UPA> upas = localizador.localizacaoUpas();
 
+        //List<UPA> upas = Util.getUpasList(this);
+
         double[] latlngs = new double[upas.size() * 2];
         Bundle bundle = new Bundle();
 

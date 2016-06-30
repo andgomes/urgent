@@ -89,5 +89,40 @@ public class Util {
         return newList;
     }
 
+    public static ArrayList<String> getUpasAdress(){
+        ArrayList<String> list = new ArrayList<String>();
+
+        list.add("venida Presidente Castelo Branco s/n");
+        list.add("Avenida G, 9");
+        list.add("Rua Betel s/n");
+        list.add("Rua Sargento João Pinheiro com a Rua João Gentil");
+        list.add("Local: Avenida Castelo de Castro s/n");
+
+        return list;
+    }
+
+    public static ArrayList<UPA> getUpasList(Context context){
+        ArrayList<UPA> newList = new ArrayList<UPA>();
+        ArrayList<String> list = getUpasAdress();
+
+        Geocoder geocoder = new Geocoder(context);
+        List<Address> enderecos = null;
+        try {
+            for(int i=0; i<list.size(); i++) {
+                enderecos = geocoder.getFromLocationName(list.get(i), 1);
+                if (enderecos.size() > 0) {
+                    //Log.v("tag", "coordenadas " + enderecos.get(0).getLatitude() + ", " + enderecos.get(0).getLongitude());
+                    UPA upa = new UPA(enderecos.get(0).getLatitude(), enderecos.get(0).getLongitude());
+                    newList.add(upa);
+                }
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+
+        return newList;
+    }
+
 
 }
