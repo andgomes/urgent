@@ -92,11 +92,19 @@ public class Util {
     public static ArrayList<String> getUpasAdress(){
         ArrayList<String> list = new ArrayList<String>();
 
+        //upas da prefeitura
         list.add("Avenida Presidente Castelo Branco s/n - Cristo Redentor");
         list.add("Avenida G, 9 – Vila Velha");
         list.add("Rua Betel s/n - Serrinha");
         list.add("Rua Sargento João Pinheiro com a Rua João Gentil – Bom Jardim");
         list.add("Avenida Castelo de Castro s/n – Jangurussu");
+
+        //upas do governo
+        list.add("Avenida Costa e Silva, s/n, fortaleza");
+        list.add("Rua Júlio Silva, 440, fortaleza");
+        list.add("Rua Cardeal Arcoverde, s/n, fortaleza");
+        list.add("Rua Miguel Gurgel, s/n, fortaleza");
+        list.add("Rua 15, fortaleza");
 
         return list;
     }
