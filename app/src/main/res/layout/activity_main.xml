@@ -20,7 +20,8 @@
         android:layout_width="match_parent"
         android:layout_marginTop="30dp"
         android:layout_height="wrap_content"
-        android:text="Hospitais" />
+        android:text="Hospitais"
+        android:onClick="visualizarHospitais"/>
 
     <Button
         android:id="@+id/btnPostosDeSaude"

@@ -53,6 +53,18 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    public void visualizarHospitais(View view){
+        if (ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) !=
+                PackageManager.PERMISSION_GRANTED) {
+
+            ActivityCompat.requestPermissions(this,
+                    new String[] {Manifest.permission.ACCESS_FINE_LOCATION}, 1);
+
+        } else {
+            mapsHospital();
+        }
+    }
+
     public void visualizarPostos(View view){
         if (ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) !=
                 PackageManager.PERMISSION_GRANTED) {
@@ -76,6 +88,31 @@ public class MainActivity extends AppCompatActivity {
         } else {
             mapsUpa();
         }
+
+    }
+
+    private void mapsHospital() {
+
+        //List<UPA> hospitais = localizador.localizacaoUpas();
+
+        List<Hospital> hospitais = Util.getHospitalList(this);
+
+        double[] latlngs = new double[hospitais.size() * 2];
+        Bundle bundle = new Bundle();
+
+        for (int i = 0, j = 0; i < latlngs.length; i += 2, j++) {
+
+            latlngs[i] = hospitais.get(j).getLatitude();
+            latlngs[i + 1] = hospitais.get(j).getLongitude();
+
+        }
+
+        bundle.putDoubleArray("Localizations", latlngs);
+
+        Intent intent = new Intent(this, MapsActivity.class);
+        intent.putExtras(bundle);
+
+        startActivity(intent);
 
     }
 
@@ -105,9 +142,9 @@ public class MainActivity extends AppCompatActivity {
 
     private void mapsUpa() {
 
-        List<UPA> upas = localizador.localizacaoUpas();
+        //List<UPA> upas = localizador.localizacaoUpas();
 
-        //List<UPA> upas = Util.getUpasList(this);
+        List<UPA> upas = Util.getUpasList(this);
 
         double[] latlngs = new double[upas.size() * 2];
         Bundle bundle = new Bundle();

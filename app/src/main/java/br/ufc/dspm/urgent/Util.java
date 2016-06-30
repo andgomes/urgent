@@ -92,11 +92,23 @@ public class Util {
     public static ArrayList<String> getUpasAdress(){
         ArrayList<String> list = new ArrayList<String>();
 
-        list.add("venida Presidente Castelo Branco s/n");
-        list.add("Avenida G, 9");
-        list.add("Rua Betel s/n");
-        list.add("Rua Sargento João Pinheiro com a Rua João Gentil");
-        list.add("Local: Avenida Castelo de Castro s/n");
+        list.add("Avenida Presidente Castelo Branco s/n - Cristo Redentor");
+        list.add("Avenida G, 9 – Vila Velha");
+        list.add("Rua Betel s/n - Serrinha");
+        list.add("Rua Sargento João Pinheiro com a Rua João Gentil – Bom Jardim");
+        list.add("Avenida Castelo de Castro s/n – Jangurussu");
+
+        return list;
+    }
+
+    public static ArrayList<String> getUpasNames(){
+        ArrayList<String> list = new ArrayList<String>();
+
+        list.add("UPA Dr. Eduíno França Barreira");
+        list.add("UPA Dr. Fernando Guanabara");
+        list.add("UPA Dr. Haroldo Juaçaba");
+        list.add("UPA Juraci Magalhães");
+        list.add("UPA Dr Fábio Landim");
 
         return list;
     }
@@ -114,6 +126,53 @@ public class Util {
                     //Log.v("tag", "coordenadas " + enderecos.get(0).getLatitude() + ", " + enderecos.get(0).getLongitude());
                     UPA upa = new UPA(enderecos.get(0).getLatitude(), enderecos.get(0).getLongitude());
                     newList.add(upa);
+                }
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+
+        return newList;
+    }
+
+
+    public static ArrayList<String> getHospitaisAdress(){
+        ArrayList<String> list = new ArrayList<String>();
+        //gonzaguinhas
+        list.add("Av. Dom Aloísio Lorscheider, 1130 - Barra do Ceará");
+        list.add("Av. D, 440 - José Walter");
+        list.add("Av. Washington Soares, 7700 - Messejana");
+        //frotinhas
+        list.add("Rua Cândido Maia, 294 - Antônio Bezerra");
+        list.add("Av. General Osório de Paiva, 1127 - Parangaba");
+        list.add("Av. Presidente Costa e Silva, 1578 - Messejana");
+        //dra zilda arns neumann
+        list.add("Av. Lineu Machado, 155 - Jóquei Clube");
+        //ijf
+        list.add("Rua Barão do Rio Branco, 1816 - Centro");
+        //nossa senhora de conceição
+        list.add("Rua 1018, 148 - Conjunto Ceará");
+        //centro de atendimento a criança
+        list.add("Rua Guilherme Perdigão, 299 - Parangaba");
+
+
+        return list;
+    }
+
+    public static ArrayList<Hospital> getHospitalList(Context context){
+        ArrayList<Hospital> newList = new ArrayList<Hospital>();
+        ArrayList<String> list = getHospitaisAdress();
+
+        Geocoder geocoder = new Geocoder(context);
+        List<Address> enderecos = null;
+        try {
+            for(int i=0; i<list.size(); i++) {
+                enderecos = geocoder.getFromLocationName(list.get(i), 1);
+                if (enderecos.size() > 0) {
+                    //Log.v("tag", "coordenadas " + enderecos.get(0).getLatitude() + ", " + enderecos.get(0).getLongitude());
+                    Hospital hospital = new Hospital(enderecos.get(0).getLatitude(), enderecos.get(0).getLongitude());
+                    newList.add(hospital);
                 }
             }
         } catch (IOException e) {
