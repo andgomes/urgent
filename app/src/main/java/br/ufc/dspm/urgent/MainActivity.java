@@ -78,7 +78,14 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
-    public void visualizarHospitais(View view){
+    public void visualizarHospitaisClick(View view){
+
+        visualizarHospitais();
+
+    }
+
+    public void visualizarHospitais() {
+
         if (ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) !=
                 PackageManager.PERMISSION_GRANTED) {
 
@@ -88,9 +95,17 @@ public class MainActivity extends AppCompatActivity {
         } else {
             mapsHospital();
         }
+
     }
 
-    public void visualizarPostos(View view){
+    public void visualizarPostosClick(View view){
+
+        visualizarPostos();
+
+    }
+
+    public void visualizarPostos() {
+
         if (ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) !=
                 PackageManager.PERMISSION_GRANTED) {
 
@@ -100,9 +115,16 @@ public class MainActivity extends AppCompatActivity {
         } else {
             mapsPostoDeSaude();
         }
+
     }
 
-    public void visualizarUpas(View view) {
+    public void visualizarUpasClick(View view) {
+
+        visualizarUpas();
+
+    }
+
+    public void visualizarUpas() {
 
         if (ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) !=
                 PackageManager.PERMISSION_GRANTED) {
