@@ -17,6 +17,8 @@ import java.io.StringWriter;
 import java.io.UnsupportedEncodingException;
 import java.io.Writer;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
 /**
@@ -53,6 +55,9 @@ public class Util {
                 PostoDeSaude posto = new PostoDeSaude();
                 JSONObject obj = array.getJSONObject(i);
                 if(obj.has("endereco"))posto.setEndereco(obj.getString("endereco"));
+                if(obj.has("nome"))posto.setNome(obj.getString("nome"));
+                //if(obj.has("bairro"))posto.setEndereco(obj.getString("bairro"));
+                if(obj.has("telefone"))posto.setTelefone(obj.getString("telefone"));
                 enderecoList.add(posto);
             }
         } catch (JSONException e) {
@@ -78,6 +83,8 @@ public class Util {
                     //Log.v("tag", "coordenadas " + enderecos.get(0).getLatitude() + ", " + enderecos.get(0).getLongitude());
                     PostoDeSaude posto = new PostoDeSaude(enderecos.get(0).getLatitude(), enderecos.get(0).getLongitude());
                     posto.setEndereco(list.get(i).getEndereco());
+                    posto.setNome(list.get(i).getNome());
+                    posto.setTelefone(list.get(i).getTelefone());
                     newList.add(posto);
                 }
             }
@@ -189,6 +196,19 @@ public class Util {
 
 
         return newList;
+    }
+
+    public static ArrayList<UnidadeSaude> sortList(ArrayList<UnidadeSaude> lista){
+        ArrayList<UnidadeSaude> orderedUnidadeSaudes = lista;
+
+        Collections.sort(orderedUnidadeSaudes, new Comparator<UnidadeSaude>() {
+            @Override
+            public int compare(UnidadeSaude ob1, UnidadeSaude ob2) {
+                return ob1.getDistance() < ob2.getDistance() ? -1 : (ob1.getDistance() > ob2.getDistance() ? +1 :0);
+            }
+        });
+
+        return orderedUnidadeSaudes;
     }
 
 

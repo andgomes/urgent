@@ -7,6 +7,7 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteDatabase.CursorFactory;
 import android.database.sqlite.SQLiteOpenHelper;
 
+import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -32,6 +33,9 @@ public class UnidadeSaudeDAO extends SQLiteOpenHelper {
         sql.append("id integer primary key autoincrement,");
         sql.append("latitude double,");
         sql.append("longitude double,");
+        sql.append("nome text,");
+        sql.append("endereco text,");
+        sql.append("telefone text,");
         sql.append("tipo text)");
 
         db.execSQL(sql.toString());
@@ -54,9 +58,72 @@ public class UnidadeSaudeDAO extends SQLiteOpenHelper {
 
         contentValues.put("latitude", unidadeSaude.getLatitude());
         contentValues.put("longitude", unidadeSaude.getLongitude());
+        contentValues.put("nome", unidadeSaude.getNome());
+        contentValues.put("endereco", unidadeSaude.getEndereco());
+        contentValues.put("telefone", unidadeSaude.getTelefone());
         contentValues.put("tipo", unidadeSaude.getTipo());
 
         db.insert("unidades_saude", null, contentValues);
+
+    }
+
+    public ArrayList<UnidadeSaude> listUnidadeDeSaude() {
+
+        ArrayList<UnidadeSaude> unidadeSaudeArrayList = new ArrayList<UnidadeSaude>();
+        SQLiteDatabase db = this.getReadableDatabase();
+
+        Cursor result = db.rawQuery("select * from unidades_saude",
+                null);
+
+        if (result != null && result.getCount() > 0) {
+
+            result.moveToFirst();
+
+            while (result.isAfterLast() == false) {
+
+                UnidadeSaude unidade = new PostoDeSaude(result.getDouble(1), result.getDouble(2));
+                unidade.setNome(result.getString(3));
+                unidade.setEndereco(result.getString(4));
+                unidade.setTelefone(result.getString(5));
+                unidadeSaudeArrayList.add(unidade);
+
+                result.moveToNext();
+
+            }
+
+        }
+
+        return unidadeSaudeArrayList;
+
+    }
+
+    public ArrayList<PostoDeSaude> listPostosDeSaude() {
+
+        ArrayList<PostoDeSaude> postoDeSaudeList = new ArrayList<PostoDeSaude>();
+        SQLiteDatabase db = this.getReadableDatabase();
+
+        Cursor result = db.rawQuery("select * from unidades_saude where tipo = 'posto de saude'",
+                null);
+
+        if (result != null && result.getCount() > 0) {
+
+            result.moveToFirst();
+
+            while (result.isAfterLast() == false) {
+
+                PostoDeSaude posto = new PostoDeSaude(result.getDouble(1), result.getDouble(2));
+                posto.setNome(result.getString(3));
+                posto.setEndereco(result.getString(4));
+                posto.setTelefone(result.getString(5));
+                postoDeSaudeList.add(posto);
+
+                result.moveToNext();
+
+            }
+
+        }
+
+        return postoDeSaudeList;
 
     }
 

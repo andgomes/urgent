@@ -40,6 +40,14 @@
         android:onClick="visualizarUpas"/>
 
     <Button
+        android:id="@+id/btListagem"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Listagem de unidades"
+        android:onClick="listagem"/>
+
+    <Button
         android:id="@+id/btnSamu"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

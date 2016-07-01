@@ -25,6 +25,10 @@ public class MainActivity extends AppCompatActivity {
 
     ViewFlipper viewFlipper;
 
+    UnidadeSaudeDAO dataBase;
+
+    ArrayList<PostoDeSaude> postos;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
@@ -32,6 +36,17 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         localizador = new Localizador(this);
+
+        dataBase = new UnidadeSaudeDAO(this);
+        postos = dataBase.listPostosDeSaude();
+        if(postos.isEmpty()){
+            ArrayList<PostoDeSaude> enderecoList = Util.getEnderecoList(this);
+            postos = Util.setCoordinatesByAddress(enderecoList, this);
+            for (int i=0; i<postos.size(); i++){
+                dataBase.adicionarUnidadeSaude(postos.get(i));
+            }
+
+        }
 
         campanhas();
 
@@ -51,6 +66,11 @@ public class MainActivity extends AppCompatActivity {
         viewFlipper.setFlipInterval(5000);
         viewFlipper.startFlipping();
 
+    }
+
+    public void listagem(View view){
+        Intent intent = new Intent(this, ListagemUnidadeActivity.class);
+        startActivity(intent);
     }
 
     public void visualizarHospitais(View view){
@@ -117,8 +137,6 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void mapsPostoDeSaude(){
-        ArrayList<PostoDeSaude> enderecoList = Util.getEnderecoList(this);
-        ArrayList<PostoDeSaude> postos = Util.setCoordinatesByAddress(enderecoList, this);
 
         double[] latlngs = new double[postos.size() * 2];
         Bundle bundle = new Bundle();

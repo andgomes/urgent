@@ -5,21 +5,11 @@ package br.ufc.dspm.urgent;
  */
 public class PostoDeSaude extends UnidadeSaude {
 
-    String endereco;
-
     public PostoDeSaude() {
     }
 
     public PostoDeSaude(double latitude, double longitude) {
         super(latitude, longitude);
-    }
-
-    public String getEndereco() {
-        return endereco;
-    }
-
-    public void setEndereco(String endereco) {
-        this.endereco = endereco;
     }
 
     @Override
