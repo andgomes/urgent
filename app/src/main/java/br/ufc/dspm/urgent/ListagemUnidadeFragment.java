@@ -18,7 +18,7 @@ import br.ufc.dspm.interfaces.FragmentListener;
 /**
  * Created by Gustavo on 01/07/2016.
  */
-public class ListagemUnidadeFragment extends Fragment implements AdapterListener{
+public class ListagemUnidadeFragment extends Fragment implements AdapterListener {
 
     View fragmentView;
 
@@ -29,6 +29,7 @@ public class ListagemUnidadeFragment extends Fragment implements AdapterListener
 
     FragmentListener delegate; //delegate que vai ser setado com o contexto da activity pai
     UnidadeSaudeDAO database;
+    private boolean canGetLocation;
 
     @Nullable
     @Override
@@ -37,6 +38,7 @@ public class ListagemUnidadeFragment extends Fragment implements AdapterListener
 
         database = new UnidadeSaudeDAO(fragmentView.getContext());
         unidadeSaudeList = database.listPostosDeSaude();
+        
 
         createListView();
 
@@ -62,4 +64,7 @@ public class ListagemUnidadeFragment extends Fragment implements AdapterListener
     public void onItemAdapterClick(UnidadeSaude unidadeSaude) {
         delegate.fragmentListener(unidadeSaude);// passa a unidade de saude para a activity pai
     }
+
+
+
 }
