@@ -87,7 +87,7 @@ public class UnidadeSaudeAdapter extends BaseAdapter {
                 listener.onItemAdapterClick(unidadeSaude);
             }
         });
-        if(unidadeSaude.getEndereço()!=null)viewHolder.textView02.setText(unidadeSaude.getEndereço());
+        if(unidadeSaude.getEndereco()!=null)viewHolder.textView02.setText(unidadeSaude.getEndereco());
         viewHolder.textView02.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

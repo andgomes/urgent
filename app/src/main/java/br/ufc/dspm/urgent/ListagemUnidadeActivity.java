@@ -18,6 +18,7 @@ public class ListagemUnidadeActivity extends AppCompatActivity implements Fragme
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_listagem_unidade);
+        callListagemUnidadeFragment();
     }
 
     void callListagemUnidadeFragment(){

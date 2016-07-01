@@ -11,6 +11,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
+import android.widget.Toast;
 import android.widget.ViewFlipper;
 
 import java.util.ArrayList;
@@ -47,6 +48,10 @@ public class MainActivity extends AppCompatActivity {
             }
 
         }
+        if(postos.isEmpty()){
+            Toast.makeText(this, "Não foi possivel carregar os postos de saúde",
+                    Toast.LENGTH_LONG).show();
+        }
 
         campanhas();
 
@@ -69,6 +74,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void listagem(View view){
+
         Intent intent = new Intent(this, ListagemUnidadeActivity.class);
         startActivity(intent);
     }

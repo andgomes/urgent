@@ -25,7 +25,7 @@ public class ListagemUnidadeFragment extends Fragment implements AdapterListener
     ListView unidadeSaudeListView;
     UnidadeSaudeAdapter adapter;
 
-    ArrayList<UnidadeSaude> unidadeSaudeList;
+    ArrayList<PostoDeSaude> unidadeSaudeList;
 
     FragmentListener delegate; //delegate que vai ser setado com o contexto da activity pai
     UnidadeSaudeDAO database;
@@ -36,7 +36,8 @@ public class ListagemUnidadeFragment extends Fragment implements AdapterListener
         fragmentView = inflater.inflate(R.layout.fragment_listagem_unidade, null);
 
         database = new UnidadeSaudeDAO(fragmentView.getContext());
-        unidadeSaudeList = database.listUnidadeDeSaude();
+        unidadeSaudeList = database.listPostosDeSaude();
+
         createListView();
 
         return fragmentView;
