@@ -49,7 +49,7 @@ public abstract class UnidadeSaude extends ObjectJson{
         return endereco;
     }
 
-    public void setEndereco(String endereço) {
+    public void setEndereco(String endereco) {
         this.endereco = endereco;
     }
 

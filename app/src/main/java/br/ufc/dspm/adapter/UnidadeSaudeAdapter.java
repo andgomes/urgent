@@ -80,21 +80,37 @@ public class UnidadeSaudeAdapter extends BaseAdapter {
                 listener.onItemAdapterClick(unidadeSaude);
             }
         });
-        if(unidadeSaude.getNome()!=null)viewHolder.textView01.setText(unidadeSaude.getNome());
+        if(unidadeSaude.getNome().equals("null") || unidadeSaude.getNome().equals("")){
+            viewHolder.textView01.setVisibility(View.GONE);
+        }else {
+            viewHolder.textView01.setText(unidadeSaude.getNome());
+        }
         viewHolder.textView01.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 listener.onItemAdapterClick(unidadeSaude);
             }
         });
-        if(unidadeSaude.getEndereco()!=null)viewHolder.textView02.setText(unidadeSaude.getEndereco());
+
+
+        if(unidadeSaude.getEndereco().equals("null") || unidadeSaude.getEndereco().equals("")){
+            viewHolder.textView02.setVisibility(View.GONE);
+        }else{
+            viewHolder.textView02.setText(unidadeSaude.getEndereco());
+        }
         viewHolder.textView02.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 listener.onItemAdapterClick(unidadeSaude);
             }
         });
-        if(unidadeSaude.getTelefone()!=null)viewHolder.textView03.setText(unidadeSaude.getTelefone());
+
+
+        if(unidadeSaude.getTelefone().equals("null") || unidadeSaude.getTelefone().equals("")){
+            viewHolder.textView03.setVisibility(View.GONE);
+        }else{
+            viewHolder.textView03.setText(unidadeSaude.getTelefone());
+        }
         viewHolder.textView03.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

@@ -49,8 +49,7 @@ public class MainActivity extends AppCompatActivity {
 
         }
         if(postos.isEmpty()){
-            Toast.makeText(this, "Não foi possivel carregar os postos de saúde",
-                    Toast.LENGTH_LONG).show();
+            Toast.makeText(this, "Não foi possivel carregar os postos de saúde", Toast.LENGTH_LONG).show();
         }
 
         campanhas();

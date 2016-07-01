@@ -9,50 +9,83 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="200dp">
+        android:layout_height="0dp"
+        android:layout_marginBottom="15sp"
+        android:layout_weight="4">
 
         <include layout="@layout/campanhas"/>
 
     </LinearLayout>
 
-    <Button
-        android:id="@+id/btnHospitais"
+    <LinearLayout
+        android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_marginTop="30dp"
-        android:layout_height="wrap_content"
-        android:text="Hospitais"
-        android:onClick="visualizarHospitais"/>
+        android:layout_height="0dp"
+        android:layout_weight="5">
 
-    <Button
-        android:id="@+id/btnPostosDeSaude"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:text="Postos de saúde"
-        android:onClick="visualizarPostos"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+        <Button
+            android:id="@+id/btnHospitais"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Hospitais"
+            android:onClick="visualizarHospitais"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1">
 
-    <Button
-        android:id="@+id/btnUpas"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:text="UPAS"
-        android:onClick="visualizarUpas"/>
+            <Button
+                android:id="@+id/btnPostosDeSaude"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Postos de saúde"
+                android:onClick="visualizarPostos"/>
 
-    <Button
-        android:id="@+id/btListagem"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:text="Listagem de unidades"
-        android:onClick="listagem"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1">
 
-    <Button
-        android:id="@+id/btnSamu"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:text="CHAMAR SAMU"
-        android:onClick="chamarSamu" />
+            <Button
+                android:id="@+id/btnUpas"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="UPAS"
+                android:onClick="visualizarUpas"/>
 
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+
+            <Button
+                android:id="@+id/btListagem"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Listagem de unidades"
+                android:onClick="listagem"/>
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+
+            <Button
+                android:id="@+id/btnSamu"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="CHAMAR SAMU"
+                android:onClick="chamarSamu" />
+
+        </LinearLayout>
+
+    </LinearLayout>
 </LinearLayout>

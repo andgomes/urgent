@@ -54,7 +54,10 @@ public class Util {
             for(int i=0; i<array.length(); i++){
                 PostoDeSaude posto = new PostoDeSaude();
                 JSONObject obj = array.getJSONObject(i);
-                if(obj.has("endereco"))posto.setEndereco(obj.getString("endereco"));
+                if(obj.has("endereco")){
+                    String aux = obj.getString("endereco");
+                    posto.setEndereco(obj.getString("endereco"));
+                }
                 if(obj.has("nome"))posto.setNome(obj.getString("nome"));
                 //if(obj.has("bairro"))posto.setEndereco(obj.getString("bairro"));
                 if(obj.has("telefone"))posto.setTelefone(obj.getString("telefone"));
