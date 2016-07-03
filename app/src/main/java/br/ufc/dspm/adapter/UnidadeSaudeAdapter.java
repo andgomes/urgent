@@ -8,6 +8,7 @@ import android.widget.BaseAdapter;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 
 import br.ufc.dspm.interfaces.AdapterListener;
@@ -32,7 +33,7 @@ public class UnidadeSaudeAdapter extends BaseAdapter {
     }
 
     public class ViewHolder {
-        TextView textView01, textView02, textView03;
+        TextView textView01, textView02, textView03, textView04;
         LinearLayout listViewLayout;
     }
 
@@ -65,6 +66,8 @@ public class UnidadeSaudeAdapter extends BaseAdapter {
                     .findViewById(R.id.unidadesaude_cell_endereco);
             viewHolder.textView03 = (TextView) convertView
                     .findViewById(R.id.unidadesaude_cell_telefone);
+            viewHolder.textView04 = (TextView) convertView
+                    .findViewById(R.id.unidadesaude_cell_distence);
             viewHolder.listViewLayout = (LinearLayout) convertView
                     .findViewById(R.id.unidadesaude_cell_linearlayout);
             convertView.setTag(viewHolder);
@@ -112,6 +115,15 @@ public class UnidadeSaudeAdapter extends BaseAdapter {
             viewHolder.textView03.setText(unidadeSaude.getTelefone());
         }
         viewHolder.textView03.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                listener.onItemAdapterClick(unidadeSaude);
+            }
+        });
+
+
+        viewHolder.textView04.setText("" + (new DecimalFormat("##.##").format(unidadeSaude.getDistance() / 1000)) + "km");
+        viewHolder.textView04.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 listener.onItemAdapterClick(unidadeSaude);

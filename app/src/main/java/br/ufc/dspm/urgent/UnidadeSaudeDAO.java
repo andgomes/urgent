@@ -97,9 +97,9 @@ public class UnidadeSaudeDAO extends SQLiteOpenHelper {
 
     }
 
-    public ArrayList<PostoDeSaude> listPostosDeSaude() {
+    public ArrayList<UnidadeSaude> listPostosDeSaude() {
 
-        ArrayList<PostoDeSaude> postoDeSaudeList = new ArrayList<PostoDeSaude>();
+        ArrayList<UnidadeSaude> postoDeSaudeList = new ArrayList<UnidadeSaude>();
         SQLiteDatabase db = this.getReadableDatabase();
 
         Cursor result = db.rawQuery("select * from unidades_saude where tipo = 'posto de saude'",

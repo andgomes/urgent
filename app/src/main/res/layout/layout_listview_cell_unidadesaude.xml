@@ -33,6 +33,13 @@
             android:textSize="22sp"
             android:layout_marginBottom="2sp"
             android:text="tefone"/>
+        <TextView
+            android:id="@+id/unidadesaude_cell_distence"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="22sp"
+            android:layout_marginBottom="2sp"
+            android:text="distance"/>
     </LinearLayout>
 
 </LinearLayout>

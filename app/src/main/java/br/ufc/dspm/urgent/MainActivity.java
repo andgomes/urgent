@@ -28,7 +28,7 @@ public class MainActivity extends AppCompatActivity {
 
     UnidadeSaudeDAO dataBase;
 
-    ArrayList<PostoDeSaude> postos;
+    ArrayList<UnidadeSaude> postos;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,7 +41,7 @@ public class MainActivity extends AppCompatActivity {
         dataBase = new UnidadeSaudeDAO(this);
         postos = dataBase.listPostosDeSaude();
         if(postos.isEmpty()){
-            ArrayList<PostoDeSaude> enderecoList = Util.getEnderecoList(this);
+            ArrayList<UnidadeSaude> enderecoList = Util.getEnderecoList(this);
             postos = Util.setCoordinatesByAddress(enderecoList, this);
             for (int i=0; i<postos.size(); i++){
                 dataBase.adicionarUnidadeSaude(postos.get(i));

@@ -2,6 +2,7 @@ package br.ufc.dspm.urgent;
 
 import android.app.Activity;
 import android.app.Fragment;
+import android.location.Location;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.view.LayoutInflater;
@@ -25,11 +26,14 @@ public class ListagemUnidadeFragment extends Fragment implements AdapterListener
     ListView unidadeSaudeListView;
     UnidadeSaudeAdapter adapter;
 
-    ArrayList<PostoDeSaude> unidadeSaudeList;
+    ArrayList<UnidadeSaude> auxList;
+    ArrayList<UnidadeSaude> unidadeSaudeList;
 
     FragmentListener delegate; //delegate que vai ser setado com o contexto da activity pai
     UnidadeSaudeDAO database;
     private boolean canGetLocation;
+
+
 
     @Nullable
     @Override
@@ -38,14 +42,29 @@ public class ListagemUnidadeFragment extends Fragment implements AdapterListener
 
         database = new UnidadeSaudeDAO(fragmentView.getContext());
         unidadeSaudeList = database.listPostosDeSaude();
-        
+        auxList = new ArrayList<UnidadeSaude>();
+
+        double[] localizacoes = getArguments().getDoubleArray("Localizations");
+        Location currentLoc = new Location("");
+        currentLoc.setLatitude(localizacoes[0]);
+        currentLoc.setLongitude(localizacoes[1]);
+
+        for(int i=0; i<unidadeSaudeList.size(); i++){
+            Location itemLoc = new Location("");
+            itemLoc.setLatitude(unidadeSaudeList.get(i).getLatitude());
+            itemLoc.setLongitude(unidadeSaudeList.get(i).getLongitude());
+            unidadeSaudeList.get(i).setDistance(currentLoc.distanceTo(itemLoc));
+            auxList.add(unidadeSaudeList.get(i));
+        }
+
+        unidadeSaudeList =  Util.sortList(auxList);
 
         createListView();
 
         return fragmentView;
     }
 
-    void createListView(){
+    void createListView() {
         unidadeSaudeListView = (ListView) fragmentView.findViewById(R.id.listagemunidadefragment_listview);
         adapter = new UnidadeSaudeAdapter(unidadeSaudeList, fragmentView.getContext());//seta a lista
         adapter.setListener(this);//seta o delegate para exte contexto, que implementa a interface AdapterListener que chama onItemAdapterClick
@@ -64,7 +83,6 @@ public class ListagemUnidadeFragment extends Fragment implements AdapterListener
     public void onItemAdapterClick(UnidadeSaude unidadeSaude) {
         delegate.fragmentListener(unidadeSaude);// passa a unidade de saude para a activity pai
     }
-
 
 
 }

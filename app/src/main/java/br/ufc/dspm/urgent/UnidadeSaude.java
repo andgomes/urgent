@@ -6,7 +6,7 @@ public abstract class UnidadeSaude extends ObjectJson{
 
     private double latitude;
     private double longitude;
-    private int distance;
+    private float distance=0.0f;
     private String nome="";
     private String endereco="";
     private String telefone="";
@@ -53,11 +53,11 @@ public abstract class UnidadeSaude extends ObjectJson{
         this.endereco = endereco;
     }
 
-    public int getDistance() {
+    public float getDistance() {
         return distance;
     }
 
-    public void setDistance(int distance) {
+    public void setDistance(float distance) {
         this.distance = distance;
     }
 

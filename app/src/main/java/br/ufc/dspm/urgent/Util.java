@@ -27,8 +27,8 @@ import java.util.List;
 public class Util {
 
 
-    public static ArrayList<PostoDeSaude> getEnderecoList(Context context){
-        ArrayList<PostoDeSaude> enderecoList = new ArrayList<PostoDeSaude>();
+    public static ArrayList<UnidadeSaude> getEnderecoList(Context context){
+        ArrayList<UnidadeSaude> enderecoList = new ArrayList<UnidadeSaude>();
 
         InputStream is = context.getResources().openRawResource(R.raw.record);
         Writer writer = new StringWriter();
@@ -74,8 +74,8 @@ public class Util {
 
 
 
-    public static ArrayList<PostoDeSaude> setCoordinatesByAddress(ArrayList<PostoDeSaude> list, Context context){
-        ArrayList<PostoDeSaude> newList = new ArrayList<PostoDeSaude>();
+    public static ArrayList<UnidadeSaude> setCoordinatesByAddress(ArrayList<UnidadeSaude> list, Context context){
+        ArrayList<UnidadeSaude> newList = new ArrayList<UnidadeSaude>();
 
         Geocoder geocoder = new Geocoder(context);
         List<Address> enderecos = null;
@@ -213,6 +213,8 @@ public class Util {
 
         return orderedUnidadeSaudes;
     }
+
+
 
 
 
