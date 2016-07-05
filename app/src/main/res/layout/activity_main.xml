@@ -32,7 +32,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Hospitais"
-            android:onClick="visualizarHospitais"/>
+            android:onClick="visualizarHospitaisClick"/>
         </LinearLayout>
         <LinearLayout
             android:layout_width="match_parent"
@@ -44,7 +44,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Postos de saúde"
-                android:onClick="visualizarPostos"/>
+                android:onClick="visualizarPostosClick"/>
 
         </LinearLayout>
         <LinearLayout
@@ -57,7 +57,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="UPAS"
-                android:onClick="visualizarUpas"/>
+                android:onClick="visualizarUpasClick"/>
 
         </LinearLayout>
         <LinearLayout
