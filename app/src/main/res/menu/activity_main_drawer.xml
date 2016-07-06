@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_Hopital"
+            android:title="Hospitais" />
+        <item
+            android:id="@+id/nav_PostoDeSaude"
+            android:title="Postos de Saúde" />
+        <item
+            android:id="@+id/nav_Upas"
+            android:title="UPAS" />
+        <item
+            android:id="@+id/nav_ListaDePostos"
+            android:title="Lista De Postos" />
+        <item
+            android:id="@+id/nav_Samu"
+            android:title="Samu" />
+    </group>
+
+    <item android:title="Communicate">
+        <menu>
+            <item
+                android:id="@+id/nav_Duvidas"
+                android:title="Dúvidas" />
+            <item
+                android:id="@+id/nav_Sobre"
+                android:title="Sobre" />
+        </menu>
+    </item>
+
+</menu>
