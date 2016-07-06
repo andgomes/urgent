@@ -1,4 +1,4 @@
-package br.ufc.dspm.urgent;
+package br.ufc.dspm.urgent.listagempostos;
 
 import android.app.Activity;
 import android.app.Fragment;
@@ -15,6 +15,11 @@ import java.util.ArrayList;
 import br.ufc.dspm.adapter.UnidadeSaudeAdapter;
 import br.ufc.dspm.interfaces.AdapterListener;
 import br.ufc.dspm.interfaces.FragmentListener;
+import br.ufc.dspm.urgent.R;
+import br.ufc.dspm.urgent.unidades.PostoDeSaude;
+import br.ufc.dspm.urgent.unidades.UnidadeSaude;
+import br.ufc.dspm.urgent.unidades.UnidadeSaudeDAO;
+import br.ufc.dspm.urgent.unidades.Util;
 
 /**
  * Created by Gustavo on 01/07/2016.
@@ -26,14 +31,11 @@ public class ListagemUnidadeFragment extends Fragment implements AdapterListener
     ListView unidadeSaudeListView;
     UnidadeSaudeAdapter adapter;
 
-    ArrayList<UnidadeSaude> auxList;
-    ArrayList<UnidadeSaude> unidadeSaudeList;
+    ArrayList<PostoDeSaude> auxList;
+    ArrayList<PostoDeSaude> unidadeSaudeList;
 
     FragmentListener delegate; //delegate que vai ser setado com o contexto da activity pai
     UnidadeSaudeDAO database;
-    private boolean canGetLocation;
-
-
 
     @Nullable
     @Override
@@ -42,7 +44,7 @@ public class ListagemUnidadeFragment extends Fragment implements AdapterListener
 
         database = new UnidadeSaudeDAO(fragmentView.getContext());
         unidadeSaudeList = database.listPostosDeSaude();
-        auxList = new ArrayList<UnidadeSaude>();
+        auxList = new ArrayList<>();
 
         double[] localizacoes = getArguments().getDoubleArray("Localizations");
         Location currentLoc = new Location("");

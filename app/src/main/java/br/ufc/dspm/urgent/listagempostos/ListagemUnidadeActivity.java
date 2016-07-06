@@ -1,4 +1,4 @@
-package br.ufc.dspm.urgent;
+package br.ufc.dspm.urgent.listagempostos;
 
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
@@ -15,6 +15,8 @@ import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.location.LocationServices;
 
 import br.ufc.dspm.interfaces.FragmentListener;
+import br.ufc.dspm.urgent.R;
+import br.ufc.dspm.urgent.unidades.UnidadeSaude;
 
 public class ListagemUnidadeActivity extends AppCompatActivity implements FragmentListener, GoogleApiClient.ConnectionCallbacks, GoogleApiClient.OnConnectionFailedListener {
 

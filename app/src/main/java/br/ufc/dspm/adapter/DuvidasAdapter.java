@@ -9,7 +9,7 @@ import android.widget.TextView;
 
 import java.util.List;
 
-import br.ufc.dspm.urgent.Duvidas;
+import br.ufc.dspm.urgent.corporativo.Duvidas;
 import br.ufc.dspm.urgent.R;
 
 /**

@@ -13,7 +13,7 @@ import java.util.ArrayList;
 
 import br.ufc.dspm.interfaces.AdapterListener;
 import br.ufc.dspm.urgent.R;
-import br.ufc.dspm.urgent.UnidadeSaude;
+import br.ufc.dspm.urgent.unidades.UnidadeSaude;
 
 /**
  * Created by Gustavo on 01/07/2016.

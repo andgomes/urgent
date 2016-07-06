@@ -25,22 +25,32 @@ import android.widget.ViewFlipper;
 import java.util.ArrayList;
 import java.util.List;
 
+import br.ufc.dspm.urgent.corporativo.DuvidasActivity;
+import br.ufc.dspm.urgent.corporativo.SobreActivity;
+import br.ufc.dspm.urgent.listagempostos.ListagemUnidadeActivity;
+import br.ufc.dspm.urgent.unidades.Hospital;
+import br.ufc.dspm.urgent.unidades.PostoDeSaude;
+import br.ufc.dspm.urgent.unidades.UPA;
+import br.ufc.dspm.urgent.unidades.UnidadeSaudeDAO;
+import br.ufc.dspm.urgent.unidades.Util;
+
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
     private Animation fade_in;
     private Animation fade_out;
 
-    private Localizador localizador;
+    private ViewFlipper viewFlipper;
 
-    ViewFlipper viewFlipper;
+    private UnidadeSaudeDAO dataBase;
 
-    UnidadeSaudeDAO dataBase;
-
-    ArrayList<UnidadeSaude> postos;
+    private ArrayList<PostoDeSaude> postos;
+    private ArrayList<Hospital> hospitais;
+    private List<UPA> upas;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
@@ -64,23 +74,58 @@ public class MainActivity extends AppCompatActivity
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
-        localizador = new Localizador(this);
-
         dataBase = new UnidadeSaudeDAO(this);
         postos = dataBase.listPostosDeSaude();
-        if(postos.isEmpty()){
-            ArrayList<UnidadeSaude> enderecoList = Util.getEnderecoList(this);
-            postos = Util.setCoordinatesByAddress(enderecoList, this);
+
+        if (postos.isEmpty()) {
+
+            ArrayList<PostoDeSaude> enderecoPostosList = Util.getEnderecoPostosList(this);
+            postos = Util.setCoordinatesByAddress(enderecoPostosList, this);
+
             for (int i=0; i<postos.size(); i++){
                 dataBase.adicionarUnidadeSaude(postos.get(i));
             }
 
         }
-        if(postos.isEmpty()){
+
+        if (postos.isEmpty()) {
             Toast.makeText(this, "Não foi possivel carregar os postos de saúde", Toast.LENGTH_LONG).show();
         }
 
+        hospitais = dataBase.listHospitais();
+
+        if (hospitais.isEmpty()) {
+
+            hospitais = Util.getHospitalList(this);
+
+            for (int i = 0; i < hospitais.size(); i++) {
+                dataBase.adicionarUnidadeSaude(hospitais.get(i));
+            }
+
+        }
+
+        if (hospitais.isEmpty()) {
+            Toast.makeText(this, "Não foi possivel carregar os hospitais", Toast.LENGTH_LONG).show();
+        }
+
+        upas = dataBase.listUpas();
+
+        if (upas.isEmpty()) {
+
+            upas = Util.getUpasList(this);
+
+            for (int i = 0; i < upas.size(); i++) {
+                dataBase.adicionarUnidadeSaude(upas.get(i));
+            }
+
+        }
+
+        if (upas.isEmpty()) {
+            Toast.makeText(this, "Não foi possivel carregar as UPAs", Toast.LENGTH_LONG).show();
+        }
+
         campanhas();
+
     }
 
     public void campanhas() {
@@ -103,6 +148,7 @@ public class MainActivity extends AppCompatActivity
 
         Intent intent = new Intent(this, ListagemUnidadeActivity.class);
         startActivity(intent);
+
     }
 
     public void visualizarHospitaisClick(View view){
@@ -137,7 +183,7 @@ public class MainActivity extends AppCompatActivity
                 PackageManager.PERMISSION_GRANTED) {
 
             ActivityCompat.requestPermissions(this,
-                    new String[] {android.Manifest.permission.ACCESS_FINE_LOCATION}, 1);
+                    new String[] {android.Manifest.permission.ACCESS_FINE_LOCATION}, 2);
 
         } else {
             mapsPostoDeSaude();
@@ -157,7 +203,7 @@ public class MainActivity extends AppCompatActivity
                 PackageManager.PERMISSION_GRANTED) {
 
             ActivityCompat.requestPermissions(this,
-                    new String[] {android.Manifest.permission.ACCESS_FINE_LOCATION}, 1);
+                    new String[] {android.Manifest.permission.ACCESS_FINE_LOCATION}, 3);
 
         } else {
             mapsUpa();
@@ -166,8 +212,6 @@ public class MainActivity extends AppCompatActivity
     }
 
     private void mapsHospital() {
-
-        //List<UPA> hospitais = localizador.localizacaoUpas();
 
         List<Hospital> hospitais = Util.getHospitalList(this);
 
@@ -214,8 +258,6 @@ public class MainActivity extends AppCompatActivity
 
     private void mapsUpa() {
 
-        //List<UPA> upas = localizador.localizacaoUpas();
-
         List<UPA> upas = Util.getUpasList(this);
 
         double[] latlngs = new double[upas.size() * 2];
@@ -257,8 +299,28 @@ public class MainActivity extends AppCompatActivity
 
                 if (grantResults.length > 0 &&
                         grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                    mapsHospital();
+                }
+
+                break;
+
+            case 2:
+
+                if (grantResults.length > 0 &&
+                        grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                    mapsPostoDeSaude();
+                }
+
+                break;
+
+            case 3:
+
+                if (grantResults.length > 0 &&
+                        grantResults[0] == PackageManager.PERMISSION_GRANTED) {
                     mapsUpa();
                 }
+
+                break;
 
         }
 
@@ -324,6 +386,7 @@ public class MainActivity extends AppCompatActivity
             String telefone = "192";
             Uri uri = Uri.parse("tel:" + telefone);
             Intent intent = new Intent(Intent.ACTION_DIAL, uri);
+            startActivity(intent);
 
         } else if (id == R.id.nav_Duvidas) {
 

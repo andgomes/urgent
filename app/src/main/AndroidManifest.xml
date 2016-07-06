@@ -40,9 +40,9 @@
         <activity
             android:name=".MapsActivity"
             android:label="@string/title_activity_maps" />
-        <activity android:name=".ListagemUnidadeActivity" />
-        <activity android:name=".SobreActivity" />
-        <activity android:name=".DuvidasActivity" />
+        <activity android:name=".listagempostos.ListagemUnidadeActivity" />
+        <activity android:name=".corporativo.SobreActivity" />
+        <activity android:name=".corporativo.DuvidasActivity" />
         <activity
             android:name=".MainActivity"
             android:label="@string/title_activity_main"

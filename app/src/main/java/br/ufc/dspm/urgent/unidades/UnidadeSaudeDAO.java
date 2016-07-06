@@ -1,4 +1,4 @@
-package br.ufc.dspm.urgent;
+package br.ufc.dspm.urgent.unidades;
 
 import android.content.ContentValues;
 import android.content.Context;
@@ -13,11 +13,11 @@ import java.util.List;
 
 public class UnidadeSaudeDAO extends SQLiteOpenHelper {
 
-    public static final String DATABASE_NAME = "UnidadesSaudev2.db";
-    public static final int DATABASE_VERSION = 1;
+    public static final String DATABASE_NAME = "UnidadesSaude.db";
+    public static final int DATABASE_VERSION = 4;
 
     public UnidadeSaudeDAO(Context context) {
-        super(context, DATABASE_NAME, null, DATABASE_VERSION);
+        this(context, DATABASE_NAME, null, DATABASE_VERSION);
     }
 
     public UnidadeSaudeDAO(Context context, String name, CursorFactory factory, int version) {
@@ -67,12 +67,12 @@ public class UnidadeSaudeDAO extends SQLiteOpenHelper {
 
     }
 
-    public ArrayList<UnidadeSaude> listUnidadeDeSaude() {
+    public ArrayList<Hospital> listHospitais() {
 
-        ArrayList<UnidadeSaude> unidadeSaudeArrayList = new ArrayList<UnidadeSaude>();
+        ArrayList<Hospital> hospitaisArrayList = new ArrayList<>();
         SQLiteDatabase db = this.getReadableDatabase();
 
-        Cursor result = db.rawQuery("select * from unidades_saude",
+        Cursor result = db.rawQuery("select * from unidades_saude where tipo = 'hospital'",
                 null);
 
         if (result != null && result.getCount() > 0) {
@@ -81,11 +81,11 @@ public class UnidadeSaudeDAO extends SQLiteOpenHelper {
 
             while (result.isAfterLast() == false) {
 
-                UnidadeSaude unidade = new PostoDeSaude(result.getDouble(1), result.getDouble(2));
-                unidade.setNome(result.getString(3));
-                unidade.setEndereco(result.getString(4));
-                unidade.setTelefone(result.getString(5));
-                unidadeSaudeArrayList.add(unidade);
+                Hospital hospital = new Hospital(result.getDouble(1), result.getDouble(2));
+                hospital.setNome(result.getString(3));
+                hospital.setEndereco(result.getString(4));
+                hospital.setTelefone(result.getString(5));
+                hospitaisArrayList.add(hospital);
 
                 result.moveToNext();
 
@@ -93,13 +93,13 @@ public class UnidadeSaudeDAO extends SQLiteOpenHelper {
 
         }
 
-        return unidadeSaudeArrayList;
+        return hospitaisArrayList;
 
     }
 
-    public ArrayList<UnidadeSaude> listPostosDeSaude() {
+    public ArrayList<PostoDeSaude> listPostosDeSaude() {
 
-        ArrayList<UnidadeSaude> postoDeSaudeList = new ArrayList<UnidadeSaude>();
+        ArrayList<PostoDeSaude> postoDeSaudeList = new ArrayList<>();
         SQLiteDatabase db = this.getReadableDatabase();
 
         Cursor result = db.rawQuery("select * from unidades_saude where tipo = 'posto de saude'",
@@ -129,7 +129,7 @@ public class UnidadeSaudeDAO extends SQLiteOpenHelper {
 
     public List<UPA> listUpas() {
 
-        List<UPA> upas = null;
+        List<UPA> upas = new LinkedList<>();
         SQLiteDatabase db = this.getReadableDatabase();
 
         Cursor result = db.rawQuery("select * from unidades_saude where tipo = 'upa'",
@@ -137,7 +137,6 @@ public class UnidadeSaudeDAO extends SQLiteOpenHelper {
 
         if (result != null && result.getCount() > 0) {
 
-            upas = new LinkedList<>();
             result.moveToFirst();
 
             while (result.isAfterLast() == false) {

@@ -1,4 +1,4 @@
-package br.ufc.dspm.urgent;
+package br.ufc.dspm.urgent.unidades;
 
 public class UPA extends UnidadeSaude {
 
@@ -9,5 +9,4 @@ public class UPA extends UnidadeSaude {
     public String getTipo() {
         return "upa";
     }
-
 }

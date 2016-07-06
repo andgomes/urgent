@@ -1,4 +1,4 @@
-package br.ufc.dspm.urgent;
+package br.ufc.dspm.urgent.corporativo;
 
 public class Sobre {
 

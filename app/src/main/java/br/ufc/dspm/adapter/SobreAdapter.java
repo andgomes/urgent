@@ -11,7 +11,7 @@ import android.widget.TextView;
 import java.util.List;
 
 import br.ufc.dspm.urgent.R;
-import br.ufc.dspm.urgent.Sobre;
+import br.ufc.dspm.urgent.corporativo.Sobre;
 
 
 public class SobreAdapter extends ArrayAdapter<Sobre> {

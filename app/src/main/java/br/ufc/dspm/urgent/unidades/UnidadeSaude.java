@@ -1,4 +1,4 @@
-package br.ufc.dspm.urgent;
+package br.ufc.dspm.urgent.unidades;
 
 import br.ufc.dspm.json.ObjectJson;
 
@@ -10,9 +10,6 @@ public abstract class UnidadeSaude extends ObjectJson{
     private String nome="";
     private String endereco="";
     private String telefone="";
-
-    public UnidadeSaude() {
-    }
 
     public UnidadeSaude(double latitude, double longitude) {
 
@@ -35,14 +32,6 @@ public abstract class UnidadeSaude extends ObjectJson{
 
     public void setTelefone(String telefone) {
         this.telefone = telefone;
-    }
-
-    public void setLatitude(double latitude) {
-        this.latitude = latitude;
-    }
-
-    public void setLongitude(double longitude) {
-        this.longitude = longitude;
     }
 
     public String getEndereco() {

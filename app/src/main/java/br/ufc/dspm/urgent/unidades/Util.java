@@ -1,4 +1,4 @@
-package br.ufc.dspm.urgent;
+package br.ufc.dspm.urgent.unidades;
 
 import android.content.Context;
 import android.location.Address;
@@ -21,26 +21,32 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 
+import br.ufc.dspm.urgent.R;
+
 /**
  * Created by Gustavo on 29/06/2016.
  */
 public class Util {
 
+    public static ArrayList<PostoDeSaude> getEnderecoPostosList(Context context) {
 
-    public static ArrayList<UnidadeSaude> getEnderecoList(Context context){
-        ArrayList<UnidadeSaude> enderecoList = new ArrayList<UnidadeSaude>();
+        ArrayList<PostoDeSaude> enderecoList = new ArrayList<>();
 
         InputStream is = context.getResources().openRawResource(R.raw.record);
         Writer writer = new StringWriter();
         char[] buffer = new char[1024];
+
         try {
+
             Reader reader = new BufferedReader(new InputStreamReader(is, "UTF-8"));
             int n;
+
             while ((n = reader.read(buffer)) != -1) {
                 writer.write(buffer, 0, n);
             }
 
             is.close();
+
         } catch (UnsupportedEncodingException e) {
             e.printStackTrace();
         } catch (IOException e) {
@@ -50,19 +56,31 @@ public class Util {
         String jsonString = writer.toString();
 
         try {
+
             JSONArray array = new JSONArray(jsonString);
-            for(int i=0; i<array.length(); i++){
-                PostoDeSaude posto = new PostoDeSaude();
+
+            for (int i=0; i<array.length(); i++) {
+
+                PostoDeSaude posto = new PostoDeSaude(0.0, 0.0);
                 JSONObject obj = array.getJSONObject(i);
-                if(obj.has("endereco")){
-                    String aux = obj.getString("endereco");
+
+                if (obj.has("endereco")) {
+
+                    obj.getString("endereco");
                     posto.setEndereco(obj.getString("endereco"));
+
                 }
-                if(obj.has("nome"))posto.setNome(obj.getString("nome"));
-                //if(obj.has("bairro"))posto.setEndereco(obj.getString("bairro"));
-                if(obj.has("telefone"))posto.setTelefone(obj.getString("telefone"));
+
+                if (obj.has("nome"))
+                    posto.setNome(obj.getString("nome"));
+
+                if(obj.has("telefone"))
+                    posto.setTelefone(obj.getString("telefone"));
+
                 enderecoList.add(posto);
+
             }
+
         } catch (JSONException e) {
             e.printStackTrace();
         }
@@ -71,36 +89,44 @@ public class Util {
 
     }
 
+    public static ArrayList<PostoDeSaude> setCoordinatesByAddress(ArrayList<PostoDeSaude> list,
+                                                                  Context context) {
 
-
-
-    public static ArrayList<UnidadeSaude> setCoordinatesByAddress(ArrayList<UnidadeSaude> list, Context context){
-        ArrayList<UnidadeSaude> newList = new ArrayList<UnidadeSaude>();
+        ArrayList<PostoDeSaude> newList = new ArrayList<>();
 
         Geocoder geocoder = new Geocoder(context);
-        List<Address> enderecos = null;
+        List<Address> enderecos;
+
         try {
-            for(int i=0; i<list.size(); i++) {
+
+            for (int i=0; i<list.size(); i++) {
+
                 enderecos = geocoder.getFromLocationName(list.get(i).getEndereco(), 1);
+
                 if (enderecos.size() > 0) {
-                    //Log.v("tag", "coordenadas " + enderecos.get(0).getLatitude() + ", " + enderecos.get(0).getLongitude());
-                    PostoDeSaude posto = new PostoDeSaude(enderecos.get(0).getLatitude(), enderecos.get(0).getLongitude());
+
+                    PostoDeSaude posto = new PostoDeSaude(enderecos.get(0).getLatitude(),
+                            enderecos.get(0).getLongitude());
                     posto.setEndereco(list.get(i).getEndereco());
                     posto.setNome(list.get(i).getNome());
                     posto.setTelefone(list.get(i).getTelefone());
                     newList.add(posto);
+
                 }
+
             }
+
         } catch (IOException e) {
             e.printStackTrace();
         }
 
-
         return newList;
+
     }
 
-    public static ArrayList<String> getUpasAdress(){
-        ArrayList<String> list = new ArrayList<String>();
+    public static ArrayList<String> getUpasAdress() {
+
+        ArrayList<String> list = new ArrayList<>();
 
         //upas da prefeitura
         list.add("Avenida Presidente Castelo Branco s/n - Cristo Redentor");
@@ -117,46 +143,45 @@ public class Util {
         list.add("Rua 15, fortaleza");
 
         return list;
+
     }
 
-    public static ArrayList<String> getUpasNames(){
-        ArrayList<String> list = new ArrayList<String>();
+    public static ArrayList<UPA> getUpasList(Context context) {
 
-        list.add("UPA Dr. Eduíno França Barreira");
-        list.add("UPA Dr. Fernando Guanabara");
-        list.add("UPA Dr. Haroldo Juaçaba");
-        list.add("UPA Juraci Magalhães");
-        list.add("UPA Dr Fábio Landim");
-
-        return list;
-    }
-
-    public static ArrayList<UPA> getUpasList(Context context){
-        ArrayList<UPA> newList = new ArrayList<UPA>();
+        ArrayList<UPA> newList = new ArrayList<>();
         ArrayList<String> list = getUpasAdress();
 
         Geocoder geocoder = new Geocoder(context);
-        List<Address> enderecos = null;
+        List<Address> enderecos;
+
         try {
+
             for(int i=0; i<list.size(); i++) {
+
                 enderecos = geocoder.getFromLocationName(list.get(i), 1);
+
                 if (enderecos.size() > 0) {
-                    //Log.v("tag", "coordenadas " + enderecos.get(0).getLatitude() + ", " + enderecos.get(0).getLongitude());
-                    UPA upa = new UPA(enderecos.get(0).getLatitude(), enderecos.get(0).getLongitude());
+
+                    UPA upa = new UPA(enderecos.get(0).getLatitude(),
+                            enderecos.get(0).getLongitude());
                     newList.add(upa);
+
                 }
+
             }
+
         } catch (IOException e) {
             e.printStackTrace();
         }
 
-
         return newList;
+
     }
 
+    public static ArrayList<String> getHospitaisAdress() {
 
-    public static ArrayList<String> getHospitaisAdress(){
-        ArrayList<String> list = new ArrayList<String>();
+        ArrayList<String> list = new ArrayList<>();
+
         //gonzaguinhas
         list.add("Av. Dom Aloísio Lorscheider, 1130 - Barra do Ceará");
         list.add("Av. D, 440 - José Walter");
@@ -174,35 +199,45 @@ public class Util {
         //centro de atendimento a criança
         list.add("Rua Guilherme Perdigão, 299 - Parangaba");
 
-
         return list;
+
     }
 
-    public static ArrayList<Hospital> getHospitalList(Context context){
-        ArrayList<Hospital> newList = new ArrayList<Hospital>();
+    public static ArrayList<Hospital> getHospitalList(Context context) {
+
+        ArrayList<Hospital> newList = new ArrayList<>();
         ArrayList<String> list = getHospitaisAdress();
 
         Geocoder geocoder = new Geocoder(context);
-        List<Address> enderecos = null;
+        List<Address> enderecos;
+
         try {
+
             for(int i=0; i<list.size(); i++) {
+
                 enderecos = geocoder.getFromLocationName(list.get(i), 1);
+
                 if (enderecos.size() > 0) {
-                    //Log.v("tag", "coordenadas " + enderecos.get(0).getLatitude() + ", " + enderecos.get(0).getLongitude());
-                    Hospital hospital = new Hospital(enderecos.get(0).getLatitude(), enderecos.get(0).getLongitude());
+
+                    Hospital hospital = new Hospital(enderecos.get(0).getLatitude(),
+                            enderecos.get(0).getLongitude());
                     newList.add(hospital);
+
                 }
+
             }
+
         } catch (IOException e) {
             e.printStackTrace();
         }
 
-
         return newList;
+
     }
 
-    public static ArrayList<UnidadeSaude> sortList(ArrayList<UnidadeSaude> lista){
-        ArrayList<UnidadeSaude> orderedUnidadeSaudes = lista;
+    public static ArrayList<PostoDeSaude> sortList(ArrayList<PostoDeSaude> lista) {
+
+        ArrayList<PostoDeSaude> orderedUnidadeSaudes = lista;
 
         Collections.sort(orderedUnidadeSaudes, new Comparator<UnidadeSaude>() {
             @Override
@@ -212,11 +247,7 @@ public class Util {
         });
 
         return orderedUnidadeSaudes;
+
     }
-
-
-
-
-
 
 }

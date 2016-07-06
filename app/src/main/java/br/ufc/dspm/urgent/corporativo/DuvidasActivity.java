@@ -1,4 +1,4 @@
-package br.ufc.dspm.urgent;
+package br.ufc.dspm.urgent.corporativo;
 
 import android.os.Bundle;
 import android.support.v7.app.ActionBar;
@@ -11,6 +11,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 import br.ufc.dspm.adapter.DuvidasAdapter;
+import br.ufc.dspm.urgent.R;
+import br.ufc.dspm.urgent.corporativo.Duvidas;
 
 public class DuvidasActivity extends AppCompatActivity {
 
