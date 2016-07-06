@@ -217,6 +217,7 @@ public class MainActivity extends AppCompatActivity
         }
 
         bundle.putDoubleArray("Localizations", latlngs);
+        bundle.putString("TipoUnidade", "Hospitais");
 
         Intent intent = new Intent(this, MapsActivity.class);
         intent.putExtras(bundle);
@@ -238,6 +239,7 @@ public class MainActivity extends AppCompatActivity
         }
 
         bundle.putDoubleArray("Localizations", latlngs);
+        bundle.putString("TipoUnidade", "Postos de Saúde");
 
         Intent intent = new Intent(this, MapsActivity.class);
         intent.putExtras(bundle);
@@ -262,6 +264,7 @@ public class MainActivity extends AppCompatActivity
         }
 
         bundle.putDoubleArray("Localizations", latlngs);
+        bundle.putString("TipoUnidade", "UPAs");
 
         Intent intent = new Intent(this, MapsActivity.class);
         intent.putExtras(bundle);

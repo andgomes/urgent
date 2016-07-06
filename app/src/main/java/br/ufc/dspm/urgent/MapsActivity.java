@@ -40,7 +40,7 @@ public class MapsActivity extends ActionBarActivity implements OnMapReadyCallbac
 
         ActionBar ab = getSupportActionBar();
         ab.setDisplayHomeAsUpEnabled(true);
-        ab.setTitle("Mapas");
+        ab.setTitle(getIntent().getExtras().getString("TipoUnidade"));
 
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.map);
