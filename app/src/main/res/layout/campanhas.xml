@@ -12,7 +12,7 @@
             android:id="@+id/ivImage1"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@drawable/aids"/>
+            android:background="@drawable/contra_dengue"/>
 
         <ImageView
             android:id="@+id/ivImage2"
@@ -24,7 +24,7 @@
             android:id="@+id/ivImage3"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@drawable/hpv"/>
+            android:background="@drawable/doacao"/>
 
         <ImageView
             android:id="@+id/ivImage4"

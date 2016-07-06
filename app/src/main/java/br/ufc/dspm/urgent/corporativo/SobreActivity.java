@@ -47,7 +47,6 @@ public class SobreActivity extends AppCompatActivity {
 
     private List<Sobre> novoSobre(){
         List<Sobre> sobre = new ArrayList<Sobre>();
-        sobre.add(novoSobre("Aline Alexandre", "Desenvolvedor", R.drawable.aline));
         sobre.add(novoSobre("Anderson Gomes", "Desenvolvedor", R.drawable.anderson));
         sobre.add(novoSobre("Antonio Islane", "Desenvolvedor", R.drawable.islane));
         sobre.add(novoSobre("Gustavo Brilhante", "Desenvolvedor", R.drawable.gustavo));

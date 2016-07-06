@@ -17,7 +17,9 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".UrgentPresentation">
+        <activity
+            android:name=".UrgentPresentation"
+            android:screenOrientation="portrait" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -39,14 +41,22 @@
 
         <activity
             android:name=".MapsActivity"
-            android:label="@string/title_activity_maps" />
-        <activity android:name=".listagempostos.ListagemUnidadeActivity" />
-        <activity android:name=".corporativo.SobreActivity" />
-        <activity android:name=".corporativo.DuvidasActivity" />
+            android:label="@string/title_activity_maps"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".listagempostos.ListagemUnidadeActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".corporativo.SobreActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".corporativo.DuvidasActivity"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".MainActivity"
             android:label="@string/title_activity_main"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar"
+            android:screenOrientation="portrait" ></activity>
     </application>
 
 </manifest>

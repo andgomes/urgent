@@ -8,7 +8,7 @@
     tools:context="br.ufc.dspm.urgent.MainActivity"
     tools:showIn="@layout/app_bar_main"
     android:orientation="vertical"
-    android:background="#FF6347">
+    android:background="#E00000">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -22,7 +22,8 @@
 
     <LinearLayout
         android:orientation="vertical"
-        android:layout_width="match_parent"
+        android:layout_width="330dp"
+        android:layout_gravity="center_horizontal"
         android:layout_height="0dp"
         android:layout_weight="5">
 
@@ -35,6 +36,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Hospitais"
+                android:background="#F44336"
                 android:onClick="visualizarHospitaisClick"/>
         </LinearLayout>
         <LinearLayout
@@ -47,6 +49,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Postos de saúde"
+                android:background="#F44336"
                 android:onClick="visualizarPostosClick"/>
 
         </LinearLayout>
@@ -60,6 +63,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="UPAS"
+                android:background="#F44336"
                 android:onClick="visualizarUpasClick"/>
 
         </LinearLayout>
@@ -72,7 +76,8 @@
                 android:id="@+id/btListagem"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Listagem de unidades"
+                android:text="Listagem de postos"
+                android:background="#F44336"
                 android:onClick="listagem"/>
 
         </LinearLayout>
@@ -86,6 +91,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="CHAMAR SAMU"
+                android:background="#F44336"
                 android:onClick="chamarSamu" />
 
         </LinearLayout>

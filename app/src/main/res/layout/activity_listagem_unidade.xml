@@ -15,7 +15,8 @@
         android:layout_height="wrap_content"
         android:textSize="22sp"
         android:textStyle="bold"
-        android:text="title"
+        android:text="Postos de saúde"
+        android:textColor="#000000"
         android:id="@+id/listagemunidadeactivity_title_textview"/>
 
     <FrameLayout

@@ -19,11 +19,11 @@
             android:title="Samu" />
     </group>
 
-    <item android:title="Communicate">
+    <item android:title="Informações">
         <menu>
             <item
                 android:id="@+id/nav_Duvidas"
-                android:title="Dúvidas" />
+                android:title="Dúvidas Frequentes" />
             <item
                 android:id="@+id/nav_Sobre"
                 android:title="Sobre" />
