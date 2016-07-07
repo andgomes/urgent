@@ -11,7 +11,6 @@ import java.util.List;
 
 import br.ufc.dspm.adapter.SobreAdapter;
 import br.ufc.dspm.urgent.R;
-import br.ufc.dspm.urgent.corporativo.Sobre;
 
 public class SobreActivity extends AppCompatActivity {
 
