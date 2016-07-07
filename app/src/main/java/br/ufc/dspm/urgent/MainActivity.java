@@ -51,6 +51,11 @@ public class MainActivity extends AppCompatActivity
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        Intent alarmIntent = new Intent(this, AlarmReceiver.class);
+        alarmIntent.setAction("ALARM");
+        sendBroadcast(alarmIntent);
+
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
@@ -114,11 +119,6 @@ public class MainActivity extends AppCompatActivity
         }
 
         campanhas();
-
-        Intent alarmIntent = new Intent(this, AlarmReceiver.class);
-        alarmIntent.setAction("ALARM");
-
-        sendBroadcast(alarmIntent);
 
     }
 

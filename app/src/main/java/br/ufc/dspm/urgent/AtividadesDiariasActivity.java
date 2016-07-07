@@ -21,15 +21,15 @@ public class AtividadesDiariasActivity extends AppCompatActivity {
         tvListaAtividades = (TextView) findViewById(R.id.tvAtividades);
 
         StringBuilder sb = new StringBuilder();
-        sb.append("1 - Alimente-se bem").append("\n\n");
-        sb.append("2 - Mexa-se").append("\n\n");
-        sb.append("3 - Beba água").append("\n\n");
-        sb.append("4 - Evite o estresse").append("\n\n");
-        sb.append("5 - Divirta-se").append("\n\n");
-        sb.append("6 - Descanse quando necessário").append("\n\n");
-        sb.append("7 - Cuide da sua postura").append("\n\n");
-        sb.append("8 - Use protetor solar").append("\n\n");
-        sb.append("9 - Esqueça o cigarro e o alcóol").append("\n\n");
+        sb.append("01 - Alimente-se bem").append("\n\n");
+        sb.append("02 - Mexa-se").append("\n\n");
+        sb.append("03 - Beba água").append("\n\n");
+        sb.append("04 - Evite o estresse").append("\n\n");
+        sb.append("05 - Divirta-se").append("\n\n");
+        sb.append("06 - Descanse quando necessário").append("\n\n");
+        sb.append("07 - Cuide da sua postura").append("\n\n");
+        sb.append("08 - Use protetor solar").append("\n\n");
+        sb.append("09 - Esqueça o cigarro e o alcóol").append("\n\n");
         sb.append("10 - Levante sua auto-estima");
 
         tvListaAtividades.setText(sb.toString());
