@@ -69,7 +69,10 @@
             </intent-filter>
         </receiver>
 
-        <activity android:name=".AtividadesDiariasActivity"></activity>
+        <activity
+            android:name=".AtividadesDiariasActivity"
+            android:screenOrientation="portrait">
+        </activity>
     </application>
 
 </manifest>
